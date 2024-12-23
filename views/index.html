@@ -65,9 +65,7 @@
     
         <script src="/widgets/testimonials-widget.umd.js"></script>
         <script>
-            // Attendre que le DOM soit chargé
             document.addEventListener('DOMContentLoaded', function() {
-                // Vérifier que le widget est chargé
                 console.log('DOM Loaded, TestimonialsWidget:', window.TestimonialsWidget);
                 if (window.TestimonialsWidget && window.TestimonialsWidget.init) {
                     window.TestimonialsWidget.init('testimonials-root');
