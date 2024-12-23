@@ -26,13 +26,11 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
     `;
    
-    // Ajouter la modale au body
     document.body.insertAdjacentHTML('beforeend', modalHTML);
     const modal = document.getElementById('affiliateModal');
     const closeBtn = modal.querySelector('.close');
     let hasShownModal = false;
    
-    // Fonction pour afficher la modale
     function showModal() {
        if (!hasShownModal) {
            modal.classList.add('show');
@@ -40,23 +38,18 @@ document.addEventListener('DOMContentLoaded', function() {
        }
     }
    
-    // Fonction pour fermer la modale
     function closeModal() {
        modal.classList.remove('show');
     }
    
-    // Détecter le coin supérieur droit
     document.addEventListener('mouseout', function(e) {
-       // Vérifier si le curseur est dans le coin supérieur droit
        if (e.clientX >= window.innerWidth - 50 && e.clientY <= 50) {
            showModal();
        }
     });
    
-    // Fermer la modale avec le bouton de fermeture
     closeBtn.addEventListener('click', closeModal);
    
-    // Ajouter le CSS pour Line Awesome
     const lineAwesomeLink = document.createElement('link');
     lineAwesomeLink.rel = 'stylesheet';
     lineAwesomeLink.href = 'https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css';
