@@ -18,17 +18,27 @@ body {
     color: #111827;
 }
 
-/* Header */
 .header {
     width: 100%;
     height: 80px;
-    top: 0;
+    position: relative;
     z-index: 1000;
-    background: linear-gradient(90deg,
-    #f6f9ff 0%,   /* Début avec le bleu très clair */
-    #f6f9ff 70%,  /* Maintien du bleu très clair jusqu'à 70% */
-    #ded6fb 85%,  /* Transition plus rapide vers le violet prononcé */
-    #ded6fb 100%  /* Fin avec le violet plus prononcé */);
+}
+
+.hero {
+    position: relative;
+    margin-top: -80px; /* Pour compenser la hauteur du header */
+    height: calc(866px + 80px); /* Hauteur originale + hauteur du header */
+    background-image: url('/assets/img/background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-content {
+    padding-top: 80px; /* Pour compenser la marge négative */
+    height: 100%;
+    position: relative;
 }
 
 .navbar {
@@ -43,7 +53,6 @@ body {
     z-index: 2;
 }
 
-/* Groupe gauche */
 .navbar-left {
     display: flex;
     align-items: center;
@@ -66,7 +75,6 @@ body {
     font-size: 16px;
 }
 
-/* Groupe droite */
 .app-stores {
     display: flex;
     align-items: center;
@@ -76,60 +84,72 @@ body {
 .store-button img {
     height: 40px;
     width: auto;
-    border-radius: 8px; /* Ajout des bords arrondis */
-    transition: transform 0.2s ease; /* Petite animation au hover optionnelle */
+    border-radius: 8px;
+    transition: transform 0.2s ease;
 }
 
-/* Hero Section avec Logo1 */
-body {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-}
 
-.hero {
-    position: relative;
-    width: 100vw;
-    height: 866px;
-    overflow: hidden;
-}
 
-.hero-content {
-    width: 100vw;
-    height: 866px;
-    position: relative;
-}
-
-.hero img {
-    width: 100vw;
-    height: 866px;
+.hero-background {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    display: block;
-    margin: 0;
-    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
+.hero-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 100px;
+    z-index: 1;
+}
 
-.hero-text-content {
-    position: absolute;
-    top: 120px;
-    left: 100px;
-    z-index: 3;
+.hero-left {
     max-width: 600px;
 }
 
-.hero-text-content h1 {
-    font-size: 48px;
-    line-height: 1.2;
-    margin-bottom: 24px;
-    color: #000;
+.hero-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
-.hero-text-content p {
+.hero-left h1 {
+    font-family: 'Inter', sans-serif;
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 72px;
+    letter-spacing: -0.025em;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    margin-bottom: 24px;
+}
+
+.hero-left p {
+    font-family: 'Inter', sans-serif;
     font-size: 18px;
-    line-height: 1.6;
+    font-weight: 400;
+    line-height: 28px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
     color: #666;
     margin-bottom: 32px;
+}
+
+.mobile-image {
+    width: 320px;
+    height: 640px;
+    object-fit: contain;
 }
 
 .cta-buttons {
@@ -141,12 +161,12 @@ body {
 .btn-primary {
     background-color: #6C63FF;
     color: white;
-    padding: 12px 24px;
+    padding: 16px 32px;
     border: none;
     border-radius: 8px;
     font-size: 16px;
+    font-weight: 500;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
 .btn-secondary {
@@ -158,7 +178,7 @@ body {
     color: #6C63FF;
     font-size: 16px;
     cursor: pointer;
-    padding: 12px 24px;
+    padding: 16px 32px;
 }
 
 .play-icon {
@@ -214,7 +234,6 @@ body {
     padding: 20px;
 }
 
-/* Une seule définition pour testimonial-bubble-container */
 .testimonial-bubble-container {
     width: 384px;
     min-height: 326px;
@@ -224,7 +243,6 @@ body {
     opacity: 0;
 }
 
-/* Animation pour chaque bulle */
 .testimonial-bubble-container:nth-child(1) {
     animation: scaleIn 0.6s ease forwards;
     animation-delay: 0.2s;
@@ -250,22 +268,18 @@ body {
     margin-bottom: 3rem;
 }
 
-.testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
 .partners-section {
-    width: 1440px;
-    height: 542px;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 542px;
     margin: 0 auto;
-    background-color: #FFFFFF;  /* Fond blanc */
+    background-color: #FFFFFF;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 20px 0;
+    box-sizing: border-box;
 }
 
 .partners-grid {
@@ -278,14 +292,18 @@ body {
 }
 
 .partner-logo {
-    width: 176px;
-    height: 96px;
-    padding: 32px 37px 32px 36px;
-    background: #FFFFFF;  /* Fond blanc pour les logos */
+    width: 100%;
+    max-width: 176px;
+    height: auto;
+    min-height: 96px;
+    padding: 5%;
+    box-sizing: border-box;
+    background: #FFFFFF;
     border-radius: 16px 0 0 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.3s ease;
 }
 
 .partner-logo img {
@@ -294,15 +312,6 @@ body {
     object-fit: contain;
 }
 
-/* Responsive */
-@media (max-width: 1440px) {
-    .partners-section {
-        width: 100%;
-        padding: 20px;
-    }
-}
-
-/* Footer */
 .footer {
     background-color: #000;
     padding: 1rem;
@@ -329,39 +338,18 @@ body {
     text-decoration: none;
 }
 
-/* Responsive Design */
-@media (max-width: 992px) {
-    .testimonials-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .nav-links {
+@media (max-width: 1440px) {
+    .partners-section {
         display: none;
     }
     
-    .testimonials-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-content {
-        flex-direction: column;
-        gap: 1rem;
-        text-align: center;
-    }
-}
-
-/* Styles spécifiques pour la version mobile */
-/* Responsive */
-@media (max-width: 1440px) {
     .navbar {
         width: 100%;
     }
+
 }
 
 @media (max-width: 768px) {
-    /* Réinitialisation et base */
     .header {
         height: 60px !important;
         overflow: hidden;
@@ -376,13 +364,11 @@ body {
         padding: 0 20px;
     }
 
-    /* Masquage des éléments non désirés */
     .nav-links, 
     .app-stores {
         display: none !important;
     }
 
-    /* Positionnement du logo */
     .navbar .logo {
         position: absolute !important;
         left: 20px !important;
@@ -410,7 +396,6 @@ body {
         transition: 0.4s !important;
     }
 
-    /* Sections à adapter */
     .hero {
         background-image: url('/views/assets/img/fondmobile.png') !important;
         width: 100vw !important;
@@ -420,7 +405,7 @@ body {
         position: relative !important;
     }
 
-    .hero-content {
+    .hero-inner {
         width: 100% !important;
         height: 100% !important;
         display: flex !important;
@@ -432,60 +417,45 @@ body {
         box-sizing: border-box !important;
     }
 
-    .hero-content img {
+    .hero-inner img {
         display: none !important;
     }
 
-    .hero-mask {
+    .mobile-image {
         display: none !important;
     }
 
-    .hero-text-content {
-        position: static !important;
-        max-width: 100% !important;
-        width: 100% !important;
-        padding: 0 20px !important;
-    }
-
-    .hero-text-content h1 {
+    .hero-left h1 {
         font-size: 32px !important;
         margin-bottom: 15px !important;
+        text-align: center;
+        line-height: inherit;
     }
 
-    .hero-text-content p {
+    .hero-left p {
         margin-bottom: 20px !important;
+        text-align: center;
+        line-height: inherit;
     }
 
     .cta-buttons {
         flex-direction: column !important;
         gap: 10px !important;
         align-items: center !important;
+        width: 100% !important;
     }
 
     .btn-secondary {
         display: none !important;
-    }
-
-    .cta-buttons {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: 10px !important;
-        width: 100% !important;
     }
 
     .btn-primary {
         width: 100% !important;
         max-width: 300px !important;
-    }
-    .btn-primary, 
-    .btn-secondary {
-        width: 100% !important;
         text-align: center !important;
         padding: 12px !important;
     }
 
-    /* Sections de partenaires et témoignages */
     .partners-section {
         display: none !important;
     }
@@ -503,5 +473,11 @@ body {
         opacity: 1 !important;
         transform: none !important;
         animation: none !important;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
     }
 }
