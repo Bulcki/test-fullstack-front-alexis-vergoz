@@ -15,7 +15,6 @@ const init = (elementId: string): void => {
   }
 };
 
-// Exposer explicitement l'initialisation au niveau global
 declare global {
   interface Window {
     TestimonialsWidget: {

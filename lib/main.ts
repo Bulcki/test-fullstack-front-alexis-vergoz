@@ -7,7 +7,6 @@ async function handler(req: Request): Promise<Response> {
     const url = new URL(req.url);
     console.log(`Request for: ${url.pathname}`);
 
-    // API Testimonials
     if (url.pathname === "/api/testimonials/top") {
       const topTestimonials = getThreeTopTestimonials(testimonials);
       console.log('Sending testimonials:', topTestimonials);
@@ -20,7 +19,6 @@ async function handler(req: Request): Promise<Response> {
       });
     }
 
-    // Servir les fichiers statiques
     if (url.pathname.match(/\.(css|js|png|jpg|jpeg|svg|gif)$/)) {
       try {
         const filePath = `views${url.pathname}`;
@@ -49,7 +47,6 @@ async function handler(req: Request): Promise<Response> {
       }
     }
 
-    // Route principale
     if (url.pathname === "/") {
       const body = await renderFile("views/index.html");
       return new Response(body, {

@@ -9,22 +9,17 @@ export interface ITestimonial {
   }
   
   export function getThreeTopTestimonials(testimonials: ITestimonial[]): ITestimonial[] {
-    // Crée une copie du tableau pour ne pas modifier l'original
+   
     const sortedTestimonials = [...testimonials]
-      // Trie par rating de manière décroissante
       .sort((a, b) => {
         if (b.rating !== a.rating) {
           return b.rating - a.rating;
         }
-        // Si même rating, trie par id pour assurer un ordre stable
         return a.id - b.id;
       });
-    
-    // Retourne les 3 premiers ou moins si le tableau est plus petit
     return sortedTestimonials.slice(0, 3);
   }
-  
-  // Modifions les données de test pour correspondre aux attentes
+
   export const testimonials = [
     {
       id: 1,

@@ -27,8 +27,8 @@ body {
 
 .hero {
     position: relative;
-    margin-top: -80px; /* Pour compenser la hauteur du header */
-    height: calc(866px + 80px); /* Hauteur originale + hauteur du header */
+    margin-top: -80px;
+    height: calc(866px + 80px); 
     background-image: url('/assets/img/background.png');
     background-size: cover;
     background-position: center;
@@ -36,7 +36,7 @@ body {
 }
 
 .hero-content {
-    padding-top: 80px; /* Pour compenser la marge négative */
+    padding-top: 80px;
     height: 100%;
     position: relative;
 }
@@ -192,7 +192,7 @@ body {
 .btn-secondary:hover {
     color: #5b53ff;
 }
-/* Conteneur principal pour centrer */
+
 .container {
     max-width: 1440px;
     margin: 0 auto;
