@@ -1,7 +1,3 @@
-## Installation
-
-Veuillez utiliser la commande `make setup` pour installer le projet.
-
 #### Dans le répertoire testimonials, exécutez:
 
 npm install
