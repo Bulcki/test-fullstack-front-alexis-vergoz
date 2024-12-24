@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,10 +25,10 @@
                 </div>
             </div>
             <div class="app-stores">
-                <a href="#" class="store-button">
+                <a href="https://play.google.com/store" class="store-button">
                     <img src="/assets/img/google.png" alt="Get it on Google Play">
                 </a>
-                <a href="#" class="store-button">
+                <a href="https://www.apple.com/app-store/" class="store-button">
                     <img src="/assets/img/apple.png" alt="Download on App Store">
                 </a>
             </div>
@@ -59,70 +59,12 @@
         </section>
 
         <section id="testimonials">
-            <h1>Our clients speak</h2>
+            <h2>Our clients speak</h2>
             <div id="testimonials-root"></div>
         </section>
-    
-        <script src="/widgets/testimonials-widget.umd.js"></script>
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                console.log('DOM Loaded, TestimonialsWidget:', window.TestimonialsWidget);
-                if (window.TestimonialsWidget && window.TestimonialsWidget.init) {
-                    window.TestimonialsWidget.init('testimonials-root');
-                } else {
-                    console.error('TestimonialsWidget not loaded properly');
-                }
-            });
-        </script>
 
         <section class="partners-section">
-            <div class="partners-grid">
-                <div class="partner-logo">
-                    <img src="/assets/img/airbnb.png" alt="airbnb">
-                </div>
-                <div class="partner-logo">
-                    <img src="/assets/img/google2.png" alt="google">
-                </div>
-                <div class="partner-logo">
-                    <img src="/assets/img/bookmyshow.png" alt="bookmyshow">
-                </div>
-                <div class="partner-logo">
-                    <img src="/assets/img/oyo.png" alt="oyo">
-                </div>
-                <div class="partner-logo">
-                    <img src="/assets/img/amazon.png" alt="amazon">
-                </div>
-                <div class="partner-logo">
-                    <img src="/assets/img/microso.png" alt="Microsoft">
-                </div>
-                <div class="partner-logo">
-                    <img src="/assets/img/fedex.png" alt="fedex">
-                </div>
-                <div class="partner-logo">
-                    <img src="/assets/img/walmar.png" alt="walmart">
-                </div>
-                <div class="partner-logo">
-                    <img src="/assets/img/ola.png" alt="ola">
-                </div>
-                <div class="partner-logo">
-                    <img src="/assets/img/hubspot.png" alt="hubspot">
-                </div>
-                <div class="partner-logo">
-                    <img src="/assets/img/gatsby.png" alt="gatsby">
-                </div>
-                <div class="partner-logo">
-                    <img src="/assets/img/strapi.png" alt="strapi">
-                </div>
-                <div class="partner-logo">
-                    <img src="/assets/img/atlassian.png" alt="atlassian">
-                </div>
-                <div class="partner-logo">
-                    <img src="/assets/img/servicenow.png" alt="servicenow">
-                </div>
-                <div class="partner-logo">
-                    <img src="/assets/img/grubhub.png" alt="grubhub">
-                </div>
-            </div>
+            <script src="/js/partners.js" defer></script>
         </section>
     </main>
 
@@ -139,6 +81,16 @@
     </footer>
 
     <script src="/widgets/testimonials-widget.umd.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM Loaded, TestimonialsWidget:', window.TestimonialsWidget);
+            if (window.TestimonialsWidget && window.TestimonialsWidget.init) {
+                window.TestimonialsWidget.init('testimonials-root');
+            } else {
+                console.error('TestimonialsWidget not loaded properly');
+            }
+        });
+    </script>
     <script src="/js/burgermenu.js" defer></script>
     <script src="/js/modal.js" defer></script>
 </body>

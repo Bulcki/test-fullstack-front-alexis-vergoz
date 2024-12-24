@@ -1,26 +1,26 @@
 import { assertEquals, assert } from "https://deno.land/std@0.110.0/testing/asserts.ts";
 import { getThreeTopTestimonials, testimonials } from "./testimonials.ts";
 
-Deno.test("getThreeTopTestimonials - Ordre décroissant", () => {
+Deno.test("getThreeTopTestimonials - Descending order", () => {
     const result = getThreeTopTestimonials(testimonials);
     for (let i = 1; i < result.length; i++) {
         assert(
             result[i - 1].rating >= result[i].rating,
-            `Les témoignages ne sont pas dans l'ordre décroissant à la position ${i}`
+            `The testimonials are not in descending order of position ${i}`
         );
     }
 });
 
-Deno.test("getThreeTopTestimonials - Nombre de témoignages", () => {
+Deno.test("getThreeTopTestimonials - Number of testimonials", () => {
     const result = getThreeTopTestimonials(testimonials);
     assertEquals(
         result.length,
         3,
-        "La fonction doit retourner exactement 3 témoignages"
+        "The function must return exactly 3 testimonials"
     );
 });
 
-Deno.test("getThreeTopTestimonials - Meilleurs ratings", () => {
+Deno.test("getThreeTopTestimonials - Top ratings", () => {
     const result = getThreeTopTestimonials(testimonials);
     const expectedRatings = [5, 4, 3];
     
@@ -28,26 +28,26 @@ Deno.test("getThreeTopTestimonials - Meilleurs ratings", () => {
         assertEquals(
             testimonial.rating,
             expectedRatings[index],
-            `Le témoignage à l'index ${index} devrait avoir un rating de ${expectedRatings[index]}`
+            `Testimony on the index ${index} should have a rating of ${expectedRatings[index]}`
         );
     });
 });
 
-Deno.test("getThreeTopTestimonials - Tableau vide", () => {
+Deno.test("getThreeTopTestimonials - Empty table", () => {
     const result = getThreeTopTestimonials([]);
     assertEquals(
         result.length,
         0,
-        "Un tableau vide devrait retourner un tableau vide"
+        "An empty array should return an empty array"
     );
 });
 
-Deno.test("getThreeTopTestimonials - Moins de trois témoignages", () => {
+Deno.test("getThreeTopTestimonials - Less than three testimonials", () => {
     const smallTestimonials = testimonials.slice(0, 2);
     const result = getThreeTopTestimonials(smallTestimonials);
     assertEquals(
         result.length,
         2,
-        "Devrait retourner tous les témoignages si moins de 3 disponibles"
+        "Should return all testimonials if less than 3 available"
     );
 });

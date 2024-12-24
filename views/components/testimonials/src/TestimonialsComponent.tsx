@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Testimonial } from './types';
-import './styles.css';
+import './TestimonialsComponent.css';
 
 const TestimonialsComponent: React.FC = () => {
   const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
